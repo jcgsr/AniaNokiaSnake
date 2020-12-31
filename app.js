@@ -67,13 +67,13 @@ function randomApple() {
 function control(e) {
 	squares[currentIndex].classList.remove('snake')
 
-	if (e.keyCode === 39) {
+	if (e.keyCode === 39 || e.addEventListener('touchstart')) {
 		direction = 1
-	} else if (e.keyCode === 38) {
+	} else if (e.keyCode === 38 || e.addEventListener('touchstart')) {
 		direction = -width  
-	} else if (e.keyCode === 37) {
+	} else if (e.keyCode === 37 || e.addEventListener('touchstart')) {
 		direction = -1
-	} else if (e.keyCode === 40) {
+	} else if (e.keyCode === 40 || e.addEventListener('touchstart')) {
 		direction = +width
 	}
 }
@@ -81,3 +81,12 @@ function control(e) {
 document.addEventListener('keyup', control)
 startBtn.addEventListener('click', startGame)
 })
+
+let date = new Date()
+let currentDate = date.toLocaleDateString('pt-BR', {
+	day: '2-digit',
+	month: 'short',
+	year: 'numeric'
+})
+
+document.querySelector('p#date').innerHTML = currentDate

@@ -2,10 +2,12 @@
 	background-color: gray;
 	color: white;
 	text-align: center;
+	font-family: Cursive;
 }
 
 button {
 	margin-bottom: 1rem;
+	font-size: 1.5rem;
 }
 
 .grid {
@@ -30,14 +32,14 @@ button {
 	background-color: red;
 }
 
-@media only screen and (max-width: 456px){
-	.grid {
-		width: 600px;
-		height: 600px;
-	}
-	.grid div {
-		width: 60px;
-		height: 60px;
-	}
-
+.footer p{
+	background: #696969;
+	color: #fff;
+	padding: 1rem;
 }
+
+#date {
+	color: white;
+	padding-top: 2rem;
+}
+
