@@ -31,55 +31,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function moveOutcomes() {
 		if (
-			(currentSnake[0] + width >= (width *  width) && direction === width) || // snake hits bottom
-			(currentSnake[0] % width === width -1 && direction === 1) || // snake hits right
+			(currentSnake[0] + width >= (width * width) && direction === width) || // snake hits bottom
+			(currentSnake[0] % width === width - 1 && direction === 1) || // snake hits right
 			(currentSnake[0] % width === 0 && direction === -1) || // snake hits left 
 			(currentSnake[0] - width < 0 && direction === -width) || // snake hits top
 			squares[currentSnake[0] + direction].classList.contains('snake') // snake into itself
-			) {
+		) {
 			return clearInterval(interval)
+		}
+		const tail = currentSnake.pop()
+		squares[tail].classList.remove('snake')
+		currentSnake.unshift(currentSnake[0] + direction)
+
+		if (squares[currentSnake[0]].classList.contains('apple')) {
+			squares[currentSnake[0]].classList.remove('apple')
+			squares[tail].classList.add('snake')
+			currentSnake.push(tail)
+			randomApple()
+			score++
+			scoreDisplay.textContent = score
+			clearInterval(interval)
+			intervalTime = intervalTime * speed
+			interval = setInterval(moveOutcomes, intervalTime)
+		}
+		squares[currentSnake[0]].classList.add('snake')
 	}
-	const tail = currentSnake.pop()
-	squares[tail].classList.remove('snake')
-	currentSnake.unshift(currentSnake[0] + direction)
 
-	if (squares[currentSnake[0]].classList.contains('apple')) {
-		squares[currentSnake[0]].classList.remove('apple')
-		squares[tail].classList.add('snake')
-		currentSnake.push(tail)
-		randomApple()
-		score++
-		scoreDisplay.textContent = score
-		clearInterval(interval)
-		intervalTime = intervalTime * speed
-		interval = setInterval(moveOutcomes, intervalTime)
+	function randomApple() {
+		do {
+			appleIndex = Math.floor(Math.random() * squares.length)
+		} while (squares[appleIndex].classList.contains('snake'))
+		squares[appleIndex].classList.add('apple')
 	}
-	squares[currentSnake[0]].classList.add('snake')
-}
 
-function randomApple() {
-	do {
-		appleIndex = Math.floor(Math.random() * squares.length)
-	} while (squares[appleIndex].classList.contains('snake'))
-	squares[appleIndex].classList.add('apple')
-}
+	function control(e) {
+		squares[currentIndex].classList.remove('snake')
 
-function control(e) {
-	squares[currentIndex].classList.remove('snake')
 
-	if (e.keyCode === 39 || e.addEventListener('touchstart')) {
-		direction = 1
-	} else if (e.keyCode === 38 || e.addEventListener('touchstart')) {
-		direction = -width  
-	} else if (e.keyCode === 37 || e.addEventListener('touchstart')) {
-		direction = -1
-	} else if (e.keyCode === 40 || e.addEventListener('touchstart')) {
-		direction = +width
+		if (e.keyCode === 39) {
+			direction = 1
+		} else if (e.keyCode === 38) {
+			direction = -width
+		} else if (e.keyCode === 37) {
+			direction = -1
+		} else if (e.keyCode === 40) {
+			direction = +width
+		}
 	}
-}
 
-document.addEventListener('keyup', control)
-startBtn.addEventListener('click', startGame)
+	document.addEventListener('keyup', control)
+	document.addEventListener('touchstart', control)
+	startBtn.addEventListener('click', startGame)
 })
 
 let date = new Date()
