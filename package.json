@@ -1,0 +1,28 @@
+{
+  "name": "anianokiasnake",
+  "version": "1.0.0",
+  "description": "tutorial on snake game by ania",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcgsr/AniaNokiaSnake.git"
+  },
+  "keywords": [
+    "nokia",
+    "ania",
+    "snake",
+    "game"
+  ],
+  "author": "jovane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcgsr/AniaNokiaSnake/issues"
+  },
+  "homepage": "https://github.com/jcgsr/AniaNokiaSnake#readme",
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  }
+}

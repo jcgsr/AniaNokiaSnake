@@ -1,0 +1,43 @@
+*, html {
+	background-color: gray;
+	color: white;
+	text-align: center;
+}
+
+button {
+	margin-bottom: 1rem;
+}
+
+.grid {
+	width: 600px;
+	height: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	border-style: solid;
+	margin: 1rem auto;
+}
+
+.grid div {
+	width: 60px;
+	height: 60px;
+}
+
+.snake {
+	background-color: blue;
+}
+
+.apple {
+	background-color: red;
+}
+
+@media only screen and (max-width: 456px){
+	.grid {
+		width: 600px;
+		height: 600px;
+	}
+	.grid div {
+		width: 60px;
+		height: 60px;
+	}
+
+}
