@@ -8,6 +8,12 @@
 button {
 	margin-bottom: 1rem;
 	font-size: 1.5rem;
+	box-shadow: 2px 1px 4px yellow;
+	text-shadow: 2px 1px 4px yellow;
+}
+
+h1, h3, .score, .footer, #date{
+	text-shadow: 2px 1px 4px yellow;
 }
 
 .grid {
