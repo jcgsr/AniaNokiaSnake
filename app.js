@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const squares = document.querySelectorAll('.grid div')
 	const scoreDisplay = document.querySelector('span')
 	const startBtn = document.querySelector('.start')
+	const upBtn = document.querySelector('#up')
+	const downBtn = document.querySelector('#down')
+	const leftBtn = document.querySelector('#left')
+	const rightBtn = document.querySelector('#right')
 	const width = 10
 
 	let currentIndex = 0
@@ -67,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	function control(e) {
 		squares[currentIndex].classList.remove('snake')
 
-
 		if (e.keyCode === 39) {
 			direction = 1
 		} else if (e.keyCode === 38) {
@@ -79,9 +82,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	function moveup() {
+		return direction = -width
+	}
+	function movedown() {
+		return direction = +width
+	}
+	function moveleft() {
+		return direction = -1
+	}
+	function moveright() {
+		return direction = 1
+	}
+
 	document.addEventListener('keyup', control)
-	document.addEventListener('touchstart', control)
 	startBtn.addEventListener('click', startGame)
+	upBtn.addEventListener('click', moveup)
+	downBtn.addEventListener('click', movedown)
+	leftBtn.addEventListener('click', moveleft)
+	rightBtn.addEventListener('click', moveright)
+
 })
 
 let date = new Date()

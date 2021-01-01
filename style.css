@@ -1,8 +1,8 @@
 *, html {
-	background-color: gray;
+	background-color: rgb(130, 145, 165);
 	color: white;
 	text-align: center;
-	font-family: cursive;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 button {
@@ -25,21 +25,27 @@ button {
 }
 
 .snake {
-	background-color: blue;
+	background-image: url('cobra.jpeg');
+	background-size: cover;
 }
 
 .apple {
-	background-color: red;
+	background-image: url('maca.jpeg');
+	background-size: cover;
 }
 
-.footer p{
+.footer p {
 	background: #696969;
 	color: #fff;
 	padding: 1rem;
+}
+
+.directions button {
+	font-size: 4rem;
+	margin: 2rem;
 }
 
 #date {
 	color: white;
 	padding-top: 2rem;
 }
-

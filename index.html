@@ -2,12 +2,14 @@
 <!-- Terminado em 31.01.2020 -->
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Nokia Snake Game</title>
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 	<h1>Nokia Snake</h1>
 	<button class="start">Start/Restart</button>
@@ -115,12 +117,18 @@
 		<div></div>
 		<div></div>
 	</div>
-	<div class="date-now">
+	<div class="directions">
+		<button id="up" onclick="moveup()">↑</button><br><br>
+		<button id="left" onclick="moveleft()">←</button>
+		<button id="right" onclick="moveright()">→</button><br><br>
+		<button id="down" onclick="movedown()">↓</button>
+	</div>
+	<div>
 		<p id="date"></p>
 	</div>
 	<footer class="footer">
 		<p>©2020 - Nokia Snake Game feito seguindo o <a
-			href="https://www.youtube.com/watch?v=lhNdUVh3qCc&t=587s">tutorial</a> de Ania Kubow
+				href="https://www.youtube.com/watch?v=lhNdUVh3qCc&t=587s">tutorial</a> de Ania Kubow
 			<br>
 			<br>
 
@@ -130,4 +138,5 @@
 	</footer>
 	<script src="app.js"></script>
 </body>
+
 </html>
