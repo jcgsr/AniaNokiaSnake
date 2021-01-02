@@ -46,6 +46,11 @@ h1, h3, .score, .footer, #date{
 	padding: 1rem;
 }
 
+#footer {
+	background-color: black;
+	width: 100%;
+}
+
 .directions button {
 	font-size: 4rem;
 	margin: 2rem;
@@ -54,4 +59,20 @@ h1, h3, .score, .footer, #date{
 #date {
 	color: white;
 	padding-top: 2rem;
+}
+
+@media only screen and (max-width: 456px) {
+	.grid {
+		width: 380px;
+		height: 380px;
+	}
+
+	.grid div {
+		width: 38px;
+		height: 38px;
+	}
+
+	.score {
+		font-size: 1.5rem;
+	}
 }
